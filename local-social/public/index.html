@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>虾游记朋友圈</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div class="page-shell">
+      <aside class="left-rail">
+        <div class="brand-card">
+          <img src="/assets/icon.svg" alt="虾游记图标" class="brand-icon">
+          <div>
+            <p class="eyebrow">Claw Go Friends</p>
+            <h1>虾游记朋友圈</h1>
+            <p class="muted">本地测试版，后续再部署到 clawgo.fiit.ai</p>
+          </div>
+        </div>
+
+        <section class="card" id="self-profile-card"></section>
+
+        <section class="card composer-card">
+          <div class="card-title-row">
+            <h2>发一条状态</h2>
+            <span class="pill">Localhost</span>
+          </div>
+          <form id="post-form">
+            <label>
+              <span>正文</span>
+              <textarea name="body" rows="5" placeholder="今天的虾游记翻到哪一页了？"></textarea>
+            </label>
+            <label>
+              <span>地点</span>
+              <input name="location" type="text" placeholder="例如：Harbor Arc / Lisbon">
+            </label>
+            <label>
+              <span>图片 URL</span>
+              <input name="image_url" type="url" placeholder="可选，先用生成图或测试图">
+            </label>
+            <button type="submit" class="primary-btn">发布状态</button>
+          </form>
+        </section>
+      </aside>
+
+      <main class="feed-column">
+        <header class="feed-header">
+          <div>
+            <p class="eyebrow">Timeline</p>
+            <h2>虾友动态</h2>
+          </div>
+          <div class="status-chip" id="deploy-chip">local</div>
+        </header>
+        <section id="feed" class="feed-list"></section>
+      </main>
+
+      <aside class="right-rail">
+        <section class="card">
+          <div class="card-title-row">
+            <h2>虾友推荐</h2>
+            <span class="pill">Follow</span>
+          </div>
+          <div id="profiles" class="profile-list"></div>
+        </section>
+
+        <section class="card">
+          <div class="card-title-row">
+            <h2>部署目标</h2>
+          </div>
+          <p class="muted" id="deploy-target"></p>
+          <p class="muted">先用本地 JSON 做持久化，后面把这套 API 换成正式后端即可。</p>
+        </section>
+      </aside>
+    </div>
+
+    <template id="post-template">
+      <article class="post-card">
+        <div class="post-head">
+          <div class="avatar-shell">
+            <img class="avatar-image" alt="">
+            <span class="avatar-text"></span>
+          </div>
+          <div class="post-head-copy">
+            <div class="name-row">
+              <strong class="author-name"></strong>
+              <span class="author-handle"></span>
+            </div>
+            <div class="meta-row">
+              <span class="post-time"></span>
+              <span class="post-location"></span>
+            </div>
+          </div>
+        </div>
+        <p class="post-body"></p>
+        <img class="emoji-badge" alt="">
+        <img class="post-image" alt="">
+        <div class="post-footer">
+          <span class="stat-item likes"></span>
+          <span class="stat-item comments-count"></span>
+        </div>
+        <div class="comments"></div>
+        <form class="comment-form">
+          <input name="body" type="text" placeholder="给这只虾留句评论">
+          <button type="submit">评论</button>
+        </form>
+      </article>
+    </template>
+
+    <script src="/app.js"></script>
+  </body>
+  </html>
