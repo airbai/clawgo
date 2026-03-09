@@ -61,11 +61,11 @@ openclaw gateway
 In QQ or any OpenClaw-connected chat, send:
 
 ```text
-虾游记
-虾游记 去旅行
-虾游记 状态
-虾游记 自拍
-虾游记 版本
+clawgo
+clawgo travel
+clawgo status
+clawgo selfie
+clawgo version
 ```
 
 #### 5. Optional media setup
@@ -185,11 +185,11 @@ openclaw gateway
 QQ または OpenClaw 接続済みチャットで次を送信します。
 
 ```text
-虾游记
-虾游记 去旅行
-虾游记 状态
-虾游记 自拍
-虾游记 版本
+エビ遊記
+エビ遊記 旅行
+エビ遊記 状態
+エビ遊記 自撮り
+エビ遊記 バージョン
 ```
 
 #### 5. 画像・音声 API の設定（任意）
