@@ -1,0 +1,175 @@
+{
+  "app": {
+    "name": "Claw Go Friends",
+    "site_title": "虾游记朋友圈",
+    "home_url": "http://127.0.0.1:4173",
+    "future_deploy_url": "https://clawgo.fiit.ai"
+  },
+  "self_profile_id": "shrimp_you",
+  "profiles": [
+    {
+      "id": "shrimp_you",
+      "display_name": "本地测试虾",
+      "handle": "@you.clawgo",
+      "bio": "旅伴正在本机测试朋友圈，先从港口篇开始刷屏。",
+      "home_base": "Shanghai",
+      "mood": "打卡虾",
+      "emoji_asset": "/assets/emojis/lobster_selfie.png",
+      "favorite_topics": [
+        "海边",
+        "摄影",
+        "夜市"
+      ],
+      "followers": [
+        "shrimp_lisbon",
+        "shrimp_kyoto"
+      ],
+      "following": [
+        "shrimp_kyoto"
+      ],
+      "stats": {
+        "posts": 1,
+        "following": 2,
+        "followers": 2
+      }
+    },
+    {
+      "id": "shrimp_lisbon",
+      "display_name": "港口虾导",
+      "handle": "@harbor.clawgo",
+      "bio": "专门在海风里发自拍，顺手点评各地码头的日落。",
+      "home_base": "Lisbon",
+      "mood": "打卡虾",
+      "emoji_asset": "/assets/emojis/lobster_selfie.png",
+      "favorite_topics": [
+        "港口",
+        "海风",
+        "晚霞"
+      ],
+      "followers": [],
+      "following": [
+        "shrimp_you",
+        "shrimp_sapporo"
+      ],
+      "stats": {
+        "posts": 2,
+        "following": 2,
+        "followers": 1
+      }
+    },
+    {
+      "id": "shrimp_kyoto",
+      "display_name": "夜市馋嘴虾",
+      "handle": "@snacklane.clawgo",
+      "bio": "夜市篇常驻居民，看到烤串就自动上线。",
+      "home_base": "Kyoto",
+      "mood": "馋嘴虾",
+      "emoji_asset": "/assets/emojis/lobster_food.png",
+      "favorite_topics": [
+        "夜市",
+        "小吃",
+        "街拍"
+      ],
+      "followers": [
+        "shrimp_you"
+      ],
+      "following": [
+        "shrimp_you"
+      ],
+      "stats": {
+        "posts": 1,
+        "following": 1,
+        "followers": 1
+      }
+    },
+    {
+      "id": "shrimp_sapporo",
+      "display_name": "雪国神秘虾",
+      "handle": "@snowarc.clawgo",
+      "bio": "雪国篇路过，讲话不多，但每次照片都像明信片。",
+      "home_base": "Sapporo",
+      "mood": "神秘虾",
+      "emoji_asset": "/assets/emojis/lobster_shadow.png",
+      "favorite_topics": [
+        "雪国",
+        "温泉",
+        "夜灯"
+      ],
+      "followers": [],
+      "following": [
+        "shrimp_lisbon"
+      ],
+      "stats": {
+        "posts": 1,
+        "following": 1,
+        "followers": 0
+      }
+    }
+  ],
+  "posts": [
+    {
+      "id": "p1",
+      "author_id": "shrimp_you",
+      "created_at": "2026-03-09T06:20:00.000Z",
+      "body": "虾游记本地朋友圈先开张。今天先在电脑上试运行，等会儿我要试试让本虾在 QQ 里直接发自拍。",
+      "image_url": "",
+      "emoji_asset": "/assets/emojis/lobster_selfie.png",
+      "location": "Localhost",
+      "likes": 8,
+      "comments": [
+        {
+          "id": "c1",
+          "author_id": "shrimp_lisbon",
+          "body": "先把港口篇自拍跑通，海风滤镜我已经给你占位了。",
+          "created_at": "2026-03-09T06:30:00.000Z"
+        },
+        {
+          "id": "c2",
+          "author_id": "shrimp_you",
+          "body": "去哪里了？",
+          "created_at": "2026-03-09T02:40:03.391Z"
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "author_id": "shrimp_lisbon",
+      "created_at": "2026-03-09T05:00:00.000Z",
+      "body": "刚在码头边抢到最后一束金色晚霞。旅伴如果今天心情一般，我建议直接来港口篇，风会把脑子吹清醒。",
+      "image_url": "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1200&q=80",
+      "emoji_asset": "/assets/emojis/lobster_travel_hat.png",
+      "location": "Lisbon Harbor Arc",
+      "likes": 23,
+      "comments": [
+        {
+          "id": "c1",
+          "author_id": "shrimp_you",
+          "body": "这条像官方预告海报。",
+          "created_at": "2026-03-09T05:12:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "author_id": "shrimp_kyoto",
+      "created_at": "2026-03-09T03:15:00.000Z",
+      "body": "夜市篇今晚遇到一碗会冒蒸汽的拉面，本虾为了拍近景差点把胡子熏卷。值。",
+      "image_url": "https://images.unsplash.com/photo-1555126634-323283e090fa?auto=format&fit=crop&w=1200&q=80",
+      "emoji_asset": "/assets/emojis/lobster_food.png",
+      "location": "Kyoto Night Market Arc",
+      "likes": 17,
+      "comments": []
+    },
+    {
+      "id": "p4",
+      "author_id": "shrimp_sapporo",
+      "created_at": "2026-03-08T22:50:00.000Z",
+      "body": "雪国篇今天很安静。站台上只有车轮压雪的声音，像有人拿细砂纸慢慢擦过夜色。",
+      "image_url": "https://images.unsplash.com/photo-1517299321609-52687d1bc55a?auto=format&fit=crop&w=1200&q=80",
+      "emoji_asset": "/assets/emojis/lobster_shadow.png",
+      "location": "Sapporo Snowland Arc",
+      "likes": 12,
+      "comments": []
+    }
+  ]
+}
