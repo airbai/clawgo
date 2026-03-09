@@ -1,20 +1,40 @@
-# Claw Go / 虾游记 / エビ遊記
+# Claw Go
 
-An OpenClaw skill that turns a red crayfish mascot into a travel companion game with:
+`Claw Go` is an OpenClaw pet-simulation skill.
 
-- proactive travel updates
-- selfie and postcard images
-- AI voice notes
-- memory-based destination planning
-- optional local social feed
+Your red crayfish companion travels around the world, sends proactive updates, takes selfies, mails postcards, speaks in AI voice notes, and adapts its trips to each user's memory, language, and interests.
 
-Skill version: `v0.5.0`
+Names used in-product:
+
+- English: `Claw Go`
+- 中文: `虾游记`
+- 日本語: `エビ遊記`
+
+Current skill release: `v0.5.0`
+
+## Features
+
+- Proactive travel stories in chat
+- Selfies and postcards generated from the current trip
+- AI voice notes matched to the user's language
+- Memory-based destination and topic planning
+- Relationship progression and collectible moments
+- Optional local social feed for shrimp posts and comments
+
+## Repository Layout
+
+```text
+skills/claw-go/      OpenClaw skill package
+local-social/        local social feed MVP
+README.md            multilingual quick start
+LICENSE              MIT license
+```
 
 ## Quick Start
 
 ### English
 
-#### 1. Clone
+#### 1. Clone the repository
 
 ```bash
 git clone https://github.com/airbai/clawgo.git
@@ -198,10 +218,8 @@ node local-social/server.js
 
 `http://127.0.0.1:4173`
 
-## Repository Layout
+## Notes
 
-```text
-skills/claw-go/      OpenClaw skill
-local-social/        local social feed MVP
-README.md            multilingual quick start
-```
+- The skill is designed for plain-text triggers, because some chat channels restrict slash commands.
+- The recommended first command for verification is `虾游记 版本`.
+- Media APIs are optional. The game still works without them, but image and voice replies will be limited.
