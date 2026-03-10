@@ -2,11 +2,12 @@
 
 ## 1. Goals
 
-Support two image paths and one voice path:
+Support two image paths and two voice paths:
 
 - `web_photo`: use found web photos as travel background or reference
 - `image_gen`: generate custom mascot-first art with LLM image model
 - `tts_voice`: generate short in-character voice notes with LLM TTS
+- `stt_input`: transcribe inbound IM voice messages into text before game logic runs
 
 ## 2. Image Strategy
 
@@ -75,6 +76,9 @@ These env vars are expected when wiring real providers:
 - `CLAWGO_TTS_API_KEY`
 - `CLAWGO_TTS_MODEL`
 - `CLAWGO_TTS_VOICE`
+- `CLAWGO_STT_API_BASE`
+- `CLAWGO_STT_API_KEY`
+- `CLAWGO_STT_MODEL`
 
 Current configured provider:
 
@@ -82,11 +86,26 @@ Current configured provider:
 - image model: `Kwai-Kolors/Kolors`
 - tts provider: `SiliconFlow`
 - tts model: `fnlp/MOSS-TTSD-v0.5`
+- stt provider: `SiliconFlow`
+- stt model: `FunAudioLLM/SenseVoiceSmall`
 
 Local smoke test script:
 
 - `scripts/test_siliconflow_media.sh`
 - `scripts/generate_media_bundle.js`
+- `scripts/transcribe_audio.js`
+
+Inbound IM voice path:
+
+1. channel receives a voice attachment or downloadable audio URL
+2. runtime calls `scripts/transcribe_audio.js`
+3. treat returned `transcript` as the user's actual text input
+4. preserve the original audio only as transport; gameplay uses the transcript
+
+Rule:
+
+- never answer "I cannot hear voice messages" if a valid audio file or URL is available
+- if transcription fails, tell the user that speech recognition failed and ask for text retry
 
 If keys are absent:
 

@@ -188,6 +188,17 @@ textarea {
   padding: 14px 18px;
 }
 
+.install-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.install-copy {
+  margin-top: 10px;
+}
+
 .feed-list {
   display: flex;
   flex-direction: column;
@@ -264,6 +275,15 @@ textarea {
 .post-card {
   border-radius: 28px;
   padding: 22px;
+}
+
+.feature-hidden,
+.feed-mode-like-only .composer-card,
+.feed-mode-like-only .comments,
+.feed-mode-like-only .comment-form,
+.feed-mode-like-only .comments-count,
+.feed-mode-like-only .follow-btn {
+  display: none !important;
 }
 
 .post-head {
@@ -385,6 +405,32 @@ textarea {
 
 .post-audio.visible {
   display: block;
+}
+
+.like-btn {
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 18px;
+  background: rgba(218, 37, 29, 0.08);
+  color: var(--accent-deep);
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 140ms ease, background 140ms ease, color 140ms ease;
+}
+
+.like-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background: rgba(218, 37, 29, 0.14);
+}
+
+.like-btn.active {
+  background: linear-gradient(135deg, var(--accent) 0%, #ff5f3d 100%);
+  color: #fff;
+}
+
+.like-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .comments {

@@ -14,6 +14,53 @@ async function api(path, options) {
   return response.json();
 }
 
+function renderCollisionBoard(data) {
+  const root = document.querySelector("#collision-board");
+  if (!data.collisions || data.collisions.length === 0) {
+    root.innerHTML = "";
+    root.classList.remove("visible");
+    return;
+  }
+
+  root.classList.add("visible");
+  root.innerHTML = `
+    <div class="feed-header collision-header">
+      <div>
+        <p class="eyebrow">Travel Collision</p>
+        <h2>旅途碰撞</h2>
+      </div>
+      <div class="pill">12h Window</div>
+    </div>
+    <div class="collision-list">
+      ${data.collisions
+        .map(
+          (collision) => `
+            <article class="collision-card">
+              <div class="collision-title-row">
+                <strong>${collision.location_label}</strong>
+                <span class="collision-time">${formatTime(collision.created_at)}</span>
+              </div>
+              <p class="collision-summary">${collision.summary}</p>
+              <div class="collision-participants">
+                ${collision.participants
+                  .map(
+                    (participant) => `
+                      <a class="collision-chip" href="#${participant.post_id}">
+                        <img src="${participant.emoji_asset}" alt="${participant.display_name}">
+                        <span>${participant.display_name}</span>
+                      </a>
+                    `,
+                  )
+                  .join("")}
+              </div>
+            </article>
+          `,
+        )
+        .join("")}
+    </div>
+  `;
+}
+
 function formatTime(iso) {
   return new Intl.DateTimeFormat("zh-CN", {
     month: "short",
@@ -108,6 +155,7 @@ function renderFeed(data) {
   data.posts.forEach((post) => {
     const node = template.content.firstElementChild.cloneNode(true);
     node.dataset.postId = post.id;
+    node.id = post.id;
     applyAvatar(node, post.author);
     node.querySelector(".author-name").textContent = post.author.display_name;
     node.querySelector(".author-handle").textContent = post.author.handle;
@@ -117,11 +165,26 @@ function renderFeed(data) {
     node.querySelector(".likes").textContent = `${post.likes} likes`;
     node.querySelector(".comments-count").textContent = `${post.comments.length} comments`;
 
+    const collisionInline = node.querySelector(".collision-inline");
+    if (post.collision) {
+      collisionInline.innerHTML = `
+        <span class="collision-badge">Travel Collision</span>
+        <span class="collision-copy">${post.collision.location_label}</span>
+      `;
+      collisionInline.classList.add("visible");
+    }
+
     const image = node.querySelector(".post-image");
     if (post.image_url) {
       image.src = post.image_url;
       image.alt = `${post.author.display_name} posted from ${post.location || "Claw Go"}`;
       image.classList.add("visible");
+    }
+
+    const audio = node.querySelector(".post-audio");
+    if (post.audio_url) {
+      audio.src = post.audio_url;
+      audio.classList.add("visible");
     }
 
     const badge = node.querySelector(".emoji-badge");
@@ -169,9 +232,13 @@ async function refresh() {
   const selfProfile = data.profiles.find((profile) => profile.id === data.self_profile_id);
 
   document.querySelector("#deploy-chip").textContent = "local";
-  document.querySelector("#deploy-target").textContent = `当前本地地址：${data.app.home_url}，后续部署地址：${data.app.future_deploy_url}`;
+  document.querySelector("#deploy-target").textContent =
+    data.app.home_url === data.app.future_deploy_url
+      ? data.app.home_url
+      : `当前地址：${data.app.home_url}，部署地址：${data.app.future_deploy_url}`;
   renderSelfProfile(selfProfile);
   renderProfiles(data);
+  renderCollisionBoard(data);
   renderFeed(data);
 
   document.querySelectorAll(".follow-btn").forEach((button) => {

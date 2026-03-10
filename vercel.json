@@ -1,0 +1,26 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "version": 2,
+  "builds": [
+    { "src": "web/api/**/*.js", "use": "@vercel/node" },
+    { "src": "web/public/**", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/api/feed", "dest": "/web/api/feed.js" },
+    { "src": "/api/post", "dest": "/web/api/post.js" },
+    { "src": "/api/comment", "dest": "/web/api/comment.js" },
+    { "src": "/api/like", "dest": "/web/api/like.js" },
+    { "src": "/api/follow", "dest": "/web/api/follow.js" },
+    { "src": "/api/qq/callback", "dest": "/web/api/qq/callback.js" },
+    { "src": "/api/internal/post", "dest": "/web/api/internal/post.js" },
+    { "src": "/api/assets/icon", "dest": "/web/api/assets/icon.js" },
+    { "src": "/api/assets/emoji/([^/]+)", "dest": "/web/api/assets/emoji/[name].js?name=$1" },
+    { "src": "/styles.css", "dest": "/web/public/styles.css" },
+    { "src": "/app.js", "dest": "/web/public/app.js" },
+    { "src": "/", "dest": "/web/public/index.html" },
+    { "src": "/(.*)", "dest": "/web/public/$1" }
+  ],
+  "env": {
+    "CLAWGO_PUBLIC_BASE_URL": "https://clawgo.fiit.ai"
+  }
+}

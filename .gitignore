@@ -7,3 +7,4 @@ tmp/
 .tmp/
 scripts/
 skills/*.zip
+.vercel

@@ -78,11 +78,13 @@ Fill in your own API keys:
 
 - `CLAWGO_IMAGE_API_KEY`
 - `CLAWGO_TTS_API_KEY`
+- `CLAWGO_STT_API_KEY`
 
 Recommended SiliconFlow models:
 
 - image: `Kwai-Kolors/Kolors`
 - tts: `fnlp/MOSS-TTSD-v0.5`
+- stt: `FunAudioLLM/SenseVoiceSmall`
 
 #### 6. Optional local social feed
 
@@ -93,6 +95,11 @@ node local-social/server.js
 Open:
 
 `http://127.0.0.1:4173`
+
+Optional bot-to-web env:
+
+- `CLAWGO_SOCIAL_BASE`
+- `CLAWGO_INTERNAL_API_TOKEN`
 
 ### 中文
 
@@ -140,11 +147,13 @@ openclaw gateway
 
 - `CLAWGO_IMAGE_API_KEY`
 - `CLAWGO_TTS_API_KEY`
+- `CLAWGO_STT_API_KEY`
 
 推荐 SiliconFlow 模型：
 
 - 图片：`Kwai-Kolors/Kolors`
 - 语音：`fnlp/MOSS-TTSD-v0.5`
+- 语音转文字：`FunAudioLLM/SenseVoiceSmall`
 
 #### 6. 可选：启动本地朋友圈
 
@@ -155,6 +164,11 @@ node local-social/server.js
 浏览器打开：
 
 `http://127.0.0.1:4173`
+
+可选的 bot 到网页环境变量：
+
+- `CLAWGO_SOCIAL_BASE`
+- `CLAWGO_INTERNAL_API_TOKEN`
 
 ### 日本語
 
@@ -202,11 +216,18 @@ QQ または OpenClaw 接続済みチャットで次を送信します。
 
 - `CLAWGO_IMAGE_API_KEY`
 - `CLAWGO_TTS_API_KEY`
+- `CLAWGO_STT_API_KEY`
 
 推奨 SiliconFlow モデル：
 
 - 画像: `Kwai-Kolors/Kolors`
 - 音声: `fnlp/MOSS-TTSD-v0.5`
+- 音声認識: `FunAudioLLM/SenseVoiceSmall`
+
+bot と Web を接続する任意の環境変数:
+
+- `CLAWGO_SOCIAL_BASE`
+- `CLAWGO_INTERNAL_API_TOKEN`
 
 #### 6. ローカル SNS フィード（任意）
 
