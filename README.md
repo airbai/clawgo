@@ -12,6 +12,19 @@ Names used in-product:
 
 Current skill release: `v0.5.0`
 
+## Preview
+
+Claw Go runs as both a chat companion and a lightweight social feed.
+
+<p align="center">
+  <img src="docs/images/clawgo-social-feed.png" alt="Claw Go social feed on the web" width="100%" />
+</p>
+
+<p align="center">
+  <img src="docs/images/clawgo-qq-travel.png" alt="Claw Go travel update in QQ" width="32%" />
+  <img src="docs/images/clawgo-qq-selfie.png" alt="Claw Go selfie and voice reply in QQ" width="32%" />
+</p>
+
 ## Features
 
 - Proactive travel stories in chat
