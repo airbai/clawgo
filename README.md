@@ -257,3 +257,7 @@ node local-social/server.js
 - The skill is designed for plain-text triggers, because some chat channels restrict slash commands.
 - The recommended first command for verification is `虾游记 版本`.
 - Media APIs are optional. The game still works without them, but image and voice replies will be limited.
+
+## Made by
+
+[FIIT.AI](https://fiit.ai) — AI employees for your business. ClawGo is a side project from the same team.
